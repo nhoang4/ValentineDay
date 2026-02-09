@@ -187,9 +187,9 @@ function drawText() {
     if(frameNumber > 2200 && frameNumber < 2450){
         context.fillStyle = `rgba(0, 150, 255, ${opacity})`;
         if (window.innerWidth < 600) {
-            drawTextWithLineBreaks(["One of my favorite people in the entire world,", "and someone who genuinely means a lot to me."], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
+            drawTextWithLineBreaks(["One of my favorite people in the entire world,", "and someone I don't take lightly."], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
         } else {
-            context.fillText("One of my favorite people in the entire world, and someone who genuinely means a lot to me.", canvas.width/2, canvas.height/2);
+            context.fillText("One of my favorite people in the entire world, and someone I don't take lightly.", canvas.width/2, canvas.height/2);
         }
         opacity = opacity + 0.01;
     }

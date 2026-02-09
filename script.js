@@ -31,7 +31,7 @@ function drawMatrixEffect() {
     // Draw semi-transparent beige background to create fade effect
     context.fillStyle = "rgba(245, 236, 217, 0.08)";
     context.fillRect(0, 0, canvas.width, canvas.height);
-    
+
     // Draw random binary digits
     context.fillStyle = "rgba(0, 150, 0, 0.1)";
     context.font = "12px monospace";
@@ -54,19 +54,10 @@ function drawScanlines() {
 }
 
 function drawTerminalBackground() {
-    // Draw semi-transparent beige background to create fade effect
-    context.fillStyle = "rgba(245, 236, 217, 0.08)";
+    // Clear fully each frame so previous text does not leave trails.
+    context.fillStyle = "#f5ecd9";
     context.fillRect(0, 0, canvas.width, canvas.height);
-    
-    // Draw random binary digits for matrix effect
-    context.fillStyle = "rgba(0, 200, 0, 0.08)";
-    context.font = "10px 'Courier New', monospace";
-    for (let i = 0; i < 30; i++) {
-        var x = Math.random() * canvas.width;
-        var y = Math.random() * canvas.height;
-        context.fillText(characters[Math.floor(Math.random() * characters.length)], x, y);
-    }
-    
+
     // Draw scanlines
     context.strokeStyle = "rgba(0, 200, 0, 0.02)";
     context.lineWidth = 1;
@@ -112,7 +103,7 @@ function drawText() {
 
     context.font = fontSize + "px 'Courier New', monospace";
     context.textAlign = "center";
-    
+
     // Keep a very subtle glow so text stays readable without looking neon.
     context.shadowColor = "rgba(0, 80, 180, 0.2)";
     context.shadowBlur = 3;
@@ -136,7 +127,7 @@ function drawText() {
     }
     if(frameNumber >= 750 && frameNumber < 1000){
         context.fillStyle = `rgba(0, 150, 255, ${opacity})`;
-        
+
         if (window.innerWidth < 600) {
             drawTextWithLineBreaks(["I can't believe how lucky I am", "to have you in my life."], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
         } else {
@@ -257,13 +248,13 @@ function drawText() {
             context.fillText("Distance is annoying so I used technology to put tulips where you are.", canvas.width/2, canvas.height * 0.86);
         }
         thirdOpacity = thirdOpacity + 0.008;
-    }   
+    }
 
-     // Reset the shadow effect after drawing the text
-     context.shadowColor = "transparent";
-     context.shadowBlur = 0;
-     context.shadowOffsetX = 0;
-     context.shadowOffsetY = 0;
+    // Reset the shadow effect after drawing the text
+    context.shadowColor = "transparent";
+    context.shadowBlur = 0;
+    context.shadowOffsetX = 0;
+    context.shadowOffsetY = 0;
 }
 
 function draw() {

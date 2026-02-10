@@ -3,6 +3,8 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 var context = canvas.getContext("2d");
+var music = document.getElementById("bgm");
+var musicButton = document.getElementById("musicButton");
 
 // Terminal effect variables
 var scanlines = [];
@@ -17,6 +19,39 @@ bouquetImage.src = "images/bouquet.png";
 bouquetImage.onload = function () {
     bouquetImageLoaded = true;
 };
+
+function tryPlayMusic() {
+    if (!music) {
+        return;
+    }
+
+    music.volume = 0.35;
+    var playAttempt = music.play();
+    if (playAttempt && typeof playAttempt.then === "function") {
+        playAttempt.then(function () {
+            if (musicButton) {
+                musicButton.style.display = "none";
+            }
+        }).catch(function () {
+            if (musicButton) {
+                musicButton.style.display = "block";
+            }
+        });
+    }
+}
+
+if (musicButton) {
+    musicButton.addEventListener("click", function () {
+        if (!music) {
+            return;
+        }
+        music.play();
+        musicButton.style.display = "none";
+    });
+}
+
+document.addEventListener("click", tryPlayMusic, { once: true });
+window.addEventListener("load", tryPlayMusic);
 
 // Create scanlines for terminal effect
 for (let i = 0; i < canvas.height; i += 2) {
@@ -187,18 +222,18 @@ function drawText() {
     if(frameNumber > 2200 && frameNumber < 2450){
         context.fillStyle = `rgba(0, 150, 255, ${opacity})`;
         if (window.innerWidth < 600) {
-            drawTextWithLineBreaks(["One of my favorite people in the entire world,", "and someone I don't take lightly."], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
+            drawTextWithLineBreaks(["One of my favorite people in the entire world,", "and someone who genuinely means a lot to me."], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
         } else {
-            context.fillText("One of my favorite people in the entire world, and someone I don't take lightly.", canvas.width/2, canvas.height/2);
+            context.fillText("One of my favorite people in the entire world, and someone who genuinely means a lot to me.", canvas.width/2, canvas.height/2);
         }
         opacity = opacity + 0.01;
     }
     if(frameNumber >= 2450 && frameNumber < 2700){
         context.fillStyle = `rgba(0, 150, 255, ${opacity})`;
         if (window.innerWidth < 600) {
-            drawTextWithLineBreaks(["One of my favorite people in the entire world,", "and someone I don't take lightly."], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
+            drawTextWithLineBreaks(["One of my favorite people in the entire world,", "and someone who genuinely means a lot to me."], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
         } else {
-            context.fillText("One of my favorite people in the entire world, and someone I don't take lightly.", canvas.width/2, canvas.height/2);
+            context.fillText("One of my favorite people in the entire world, and someone who genuinely means a lot to me.", canvas.width/2, canvas.height/2);
         }
         opacity = opacity - 0.01;
     }
@@ -243,9 +278,9 @@ function drawText() {
         drawTulipBouquet(thirdOpacity);
         context.fillStyle = `rgba(0, 150, 255, ${Math.min(thirdOpacity, 1)})`;
         if (window.innerWidth < 600) {
-            drawTextWithLineBreaks(["Distance is annoying so I abused technology", "to put tulips where you are."], canvas.width / 2, canvas.height * 0.86, fontSize, lineHeight);
+            drawTextWithLineBreaks(["Distance is annoying so I used technology", "to put tulips where you are."], canvas.width / 2, canvas.height * 0.86, fontSize, lineHeight);
         } else {
-            context.fillText("Distance is annoying so I abused technology to put tulips where you are.", canvas.width/2, canvas.height * 0.86);
+            context.fillText("Distance is annoying so I used technology to put tulips where you are.", canvas.width/2, canvas.height * 0.86);
         }
         thirdOpacity = thirdOpacity + 0.008;
     }

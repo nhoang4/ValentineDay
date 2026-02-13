@@ -153,9 +153,9 @@ function drawText() {
         context.fillStyle = `rgba(0, 150, 255, ${opacity})`;
 
         if (window.innerWidth < 600) {
-            drawTextWithLineBreaks(["I can't believe how lucky I am", "to have you in my life."], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
+            drawTextWithLineBreaks(["Life feels a little lighter", "with you in it."], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
         } else {
-            context.fillText("I can't believe how lucky I am to have you in my life.", canvas.width/2, canvas.height/2);
+            context.fillText("Life feels a little lighter with you in it.", canvas.width/2, canvas.height/2);
         }
 
         opacity = opacity + 0.01;
@@ -164,9 +164,9 @@ function drawText() {
         context.fillStyle = `rgba(0, 150, 255, ${opacity})`;
 
         if (window.innerWidth < 600) {
-            drawTextWithLineBreaks(["I can't believe how lucky I am", "to have you in my life."], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
+            drawTextWithLineBreaks(["Life feels a little lighter", "with you in it."], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
         } else {
-            context.fillText("I can't believe how lucky I am to have you in my life.", canvas.width/2, canvas.height/2);
+            context.fillText("Life feels a little lighter with you in it.", canvas.width/2, canvas.height/2);
         }
 
         opacity = opacity - 0.01;
@@ -222,18 +222,18 @@ function drawText() {
     if(frameNumber > 2200 && frameNumber < 2450){
         context.fillStyle = `rgba(0, 150, 255, ${opacity})`;
         if (window.innerWidth < 600) {
-            drawTextWithLineBreaks(["One of my favorite people in the entire world,", "and someone who genuinely means a lot to me."], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
+            drawTextWithLineBreaks(["One of the most interesting people in the entire world,", "and someone who I do not take lightly."], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
         } else {
-            context.fillText("One of my favorite people in the entire world, and someone who genuinely means a lot to me.", canvas.width/2, canvas.height/2);
+            context.fillText("One of the most interesting people in the entire world, and someone who I do not take lightly.", canvas.width/2, canvas.height/2);
         }
         opacity = opacity + 0.01;
     }
     if(frameNumber >= 2450 && frameNumber < 2700){
         context.fillStyle = `rgba(0, 150, 255, ${opacity})`;
         if (window.innerWidth < 600) {
-            drawTextWithLineBreaks(["One of my favorite people in the entire world,", "and someone who genuinely means a lot to me."], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
+            drawTextWithLineBreaks(["One of the most interesting people in the entire world,", "and someone who I do not take lightly."], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
         } else {
-            context.fillText("One of my favorite people in the entire world, and someone who genuinely means a lot to me.", canvas.width/2, canvas.height/2);
+            context.fillText("One of the most interesting people in the entire world, and someone who I do not take lightly.", canvas.width/2, canvas.height/2);
         }
         opacity = opacity - 0.01;
     }
@@ -278,9 +278,9 @@ function drawText() {
         drawTulipBouquet(thirdOpacity);
         context.fillStyle = `rgba(0, 150, 255, ${Math.min(thirdOpacity, 1)})`;
         if (window.innerWidth < 600) {
-            drawTextWithLineBreaks(["Distance is annoying so I used technology", "to put tulips where you are."], canvas.width / 2, canvas.height * 0.86, fontSize, lineHeight);
+            drawTextWithLineBreaks(["Distance is annoying so I abused technology", "to put tulips where you are."], canvas.width / 2, canvas.height * 0.86, fontSize, lineHeight);
         } else {
-            context.fillText("Distance is annoying so I used technology to put tulips where you are.", canvas.width/2, canvas.height * 0.86);
+            context.fillText("Distance is annoying so I abused technology to put tulips where you are.", canvas.width/2, canvas.height * 0.86);
         }
         thirdOpacity = thirdOpacity + 0.008;
     }

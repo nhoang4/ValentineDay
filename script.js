@@ -5,6 +5,8 @@ canvas.height = window.innerHeight;
 var context = canvas.getContext("2d");
 var music = document.getElementById("bgm");
 var musicButton = document.getElementById("musicButton");
+var coverPage = document.getElementById("coverPage");
+var coverButton = document.getElementById("coverButton");
 
 // Terminal effect variables
 var scanlines = [];
@@ -19,6 +21,13 @@ bouquetImage.src = "images/bouquet.png";
 bouquetImage.onload = function () {
     bouquetImageLoaded = true;
 };
+
+function resetSequence() {
+    frameNumber = 500;
+    opacity = 0;
+    secondOpacity = 0;
+    thirdOpacity = 0;
+}
 
 function tryPlayMusic() {
     if (!music) {
@@ -47,6 +56,16 @@ if (musicButton) {
         }
         music.play();
         musicButton.style.display = "none";
+    });
+}
+
+if (coverButton) {
+    coverButton.addEventListener("click", function () {
+        resetSequence();
+        if (coverPage) {
+            coverPage.style.display = "none";
+        }
+        tryPlayMusic();
     });
 }
 
